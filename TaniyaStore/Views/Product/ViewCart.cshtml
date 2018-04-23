@@ -1,0 +1,42 @@
+﻿@model TaniyaStore.Models.ShoppingCart
+@{
+    ViewBag.Title = "ViewCart";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<h2>ViewCart</h2>
+
+<table>
+    <tr>
+        <td></td>
+        <td><strong>Name</strong></td>
+        <td><strong>Price</strong></td>
+        <td><strong>Quantity</strong></td>
+        <td><strong>Total</strong></td>
+    </tr>
+
+    @foreach (var product in Model.Items)
+    {
+        <tr>
+            <td>
+                <img class="product-image" src="@product.Product.Image" />
+            </td>
+            <td id="product-name">@product.Product.Name</td>
+            <td>@product.Product.Price.ToString("C")</td>
+            <td>@product.Quantity</td>
+            <td>@((product.Product.Price *product.Quantity).ToString("C"))</td>
+        </tr>
+        <tr>
+            <td><h4>Grand Total</h4></td>
+            <td>@Model.GrandTotal.ToString("C")</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td><a href="#">Checkout</a></td>
+        </tr>
+
+    }
+</table>

@@ -1,0 +1,16 @@
+﻿@model TaniyaStore.Models.Product
+@{
+    ViewBag.Title = "ProductDetail";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+<h2>ProductDetail</h2>
+<div class="container-detail">
+    <img src="@Model.Image.ToLower()"/>
+    <div class="result">
+        <h3>@Model.Name</h3>
+        <h5>@Model.Price.ToString("C")</h5>
+        <div class="description">@Model.Description</div>
+       
+    </div>
+</div>

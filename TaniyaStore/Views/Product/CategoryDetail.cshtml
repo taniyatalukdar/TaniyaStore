@@ -1,0 +1,12 @@
+﻿@model List<TaniyaStore.Models.Product>
+@{
+    ViewBag.Title = "CategoryDetail";
+    Layout = "~/Views/Shared/_LayoutPage.cshtml";
+}
+
+@foreach (var item in Model)
+{
+   <a href="@Url.Action("ProductDetail","Product", new { id = item.ProductId})">@item.Name</a>
+   <a href="@Url.Action("ProductDetail", "Product", new {id = item.ProductId})">@item.Price</a>
+}
+
